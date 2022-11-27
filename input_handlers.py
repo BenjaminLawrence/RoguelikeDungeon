@@ -27,3 +27,4 @@ class EventHandler(tcod.event.EventDispatch[Action]):
             action = EscapeAction()
 
         return action
+        
