@@ -10,13 +10,13 @@ def main() -> None:
     player_y = int(screen_height / 2)
 
     tileset = tcod.tileset.load_tilesheet(
-        "dejavu10x10_gs_tc.png", 32, 8, tcod.tilset.CHARMAP_TCOD
+        "dejavu10x10_gs_tc.png", 32, 8, tcod.tileset.CHARMAP_TCOD
     )
 
     with tcod.context.new_terminal(
         screen_width,
         screen_height,
-        tilset=tileset,
+        tileset=tileset,
         title="Roguelike Dungeon",
         vsync=True,
     ) as context:
