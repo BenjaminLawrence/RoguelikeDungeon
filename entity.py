@@ -15,4 +15,3 @@ class Entity:
         # Move the entity by a given amount
         self.x += dx
         self.y += dy
-

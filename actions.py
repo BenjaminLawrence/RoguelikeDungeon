@@ -11,5 +11,4 @@ class MovementAction(Action):
         super().__init__()
 
         self.dx = dx
-        self.dy = dy
-        
+        self.dy = dy        
