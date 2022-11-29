@@ -9,6 +9,9 @@ class GameMap:
         self.width, self.height = width, height
         self.tiles = np.full((width, height), fill_value=tile_types.wall, order="F")
 
+        self.visible = np.full((width, height), fill_value=False, order="F") # Tiles the player can currently see
+        self.explored = np.full((width, height), fill_value=False, order="F") # Tiles the player has seen before
+
     def in_bounds(self, x: int, y: int) -> bool:
         """Return True if x and y are inside of the bounds of this map."""
         return 0 <= x < self.width and 0 <= y < self.height
