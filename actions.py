@@ -46,6 +46,7 @@ class MeleeAction(ActionWithDirection):
 
         print(f"You kick the {target.name}, much to its annoyance!")
 
+
 class MovementAction(ActionWithDirection):
 
     def perform(self, engine: Engine, entity: Entity) -> None:
