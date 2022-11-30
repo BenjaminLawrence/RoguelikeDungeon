@@ -1,4 +1,4 @@
-from enum import auto, EnumCheck
+from enum import auto, Enum
 
 
 class RenderOrder(Enum):
