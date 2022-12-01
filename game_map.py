@@ -27,7 +27,11 @@ class GameMap:
         ) # Tiles the player can currently see
         self.explored = np.full(
             (width, height), fill_value=False, order="F"
-        ) # Tiles the player has seen before
+        ) # Tiles the player has been seen before
+
+    @property
+    def gamemap(self) -> GameMap:
+        return self
 
     @property
     def actors(self) -> Iterator[Actor]:
