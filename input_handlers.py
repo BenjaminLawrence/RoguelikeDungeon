@@ -95,6 +95,8 @@ class MainGameEventHandler(EventHandler):
         elif key in WAIT_KEYS:
             action = WaitAction(player)
 
+        elif key == tcod.K_v:
+            self.engine.event_handler = HistoryViewer(self.engine)
         elif key == tcod.event.K_ESCAPE:
             action = EscapeAction(player)
 
