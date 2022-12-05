@@ -8,7 +8,6 @@ import actions # Why just import the whole class now???
 from actions import (
     Action,
     BumpAction,
-    EscapeAction,
     PickupAction,
     WaitAction,
 )
@@ -253,7 +252,7 @@ class MainGameEventHandler(EventHandler):
             self.engine.event_handler = InventoryDropHandler(self.engine)
 
         elif key == tcod.event.K_ESCAPE:
-            action = EscapeAction(player)
+            raise SystemExit()
 
         return action
 
