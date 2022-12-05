@@ -8,7 +8,8 @@ from actions import (
     Action,
     BumpAction,
     EscapeAction,
-    WaitAction
+    PickupAction,
+    WaitAction,
 )
 import color
 import exceptions
@@ -121,6 +122,8 @@ class MainGameEventHandler(EventHandler):
 
         elif key == tcod.event.K_v:
             self.engine.event_handler = HistoryViewer(self.engine)
+        elif key == tcod.event.K_g:
+            action = PickupAction(player)
         elif key == tcod.event.K_ESCAPE:
             action = EscapeAction(player)
 
