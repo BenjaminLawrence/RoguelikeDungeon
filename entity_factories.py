@@ -3,7 +3,6 @@ from components.fighter import Fighter
 from entity import Actor
 
 
-
 # Creation of Player Character
 player = Actor(
     char="@",
