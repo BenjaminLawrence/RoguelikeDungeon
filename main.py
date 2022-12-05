@@ -65,7 +65,7 @@ def main() -> None:
             try:
                 for event in tcod.event.wait():
                     context.convert_event(event)
-                    engine.event_handler.handle_events(context)
+                    engine.event_handler.handle_events(event)
             except Exception: # Handle exceptions in game.
                 traceback.print_exc() # Print error to stderr.
                 # Then print the error to the message log.
