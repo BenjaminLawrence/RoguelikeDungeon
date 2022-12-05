@@ -1,5 +1,5 @@
 from components.ai import HostileEnemy
-from components.consumable import HealingConsumable
+from components import consumable
 from components.fighter import Fighter
 from components.inventory import Inventory
 from entity import Actor, Item
