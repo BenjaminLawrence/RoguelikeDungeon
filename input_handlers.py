@@ -193,7 +193,7 @@ class InventoryEventHandler(AskUserEventHandler):
         raise NotImplementedError()
 
 
-class InventoryActionHandler(InventoryEventHandler):
+class InventoryActivateHandler(InventoryEventHandler):
     """Handle using an inventory item."""
 
     TITLE = "Select an item to use"
