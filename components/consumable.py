@@ -89,7 +89,7 @@ class HealingConsumable(Consumable):
             raise Impossible(f"Your health is already full.")
 
 
-class FireballDAmageConsumable(Consumable):
+class FireballDamageConsumable(Consumable):
     def __init__(self, damage: int, radius: int):
         self.damage = damage
         self.radius = radius
