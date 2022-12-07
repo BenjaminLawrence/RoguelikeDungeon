@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import os
+
 from typing import Callable, Optional, Tuple, TYPE_CHECKING, Union
 
 import tcod.event
@@ -433,18 +435,18 @@ class MainGameEventHandler(EventHandler):
 
 
 class GameOverEventHandler(EventHandler):
-    """def handle_events(self, context: tcod.context.Context) -> None:
-        for event in tcod.event.wait():
-            action = self.dispatch(event)
+    def on_quit(self) -> None:
+        """Handle exiting out of a finished game."""
+        if os.path.exists("savegame.sav"):
+            os.remove("savegame.sav") # Deletes the active save file.
+        raise exceptions.QuitWithoutSaving() # Avoid saving a finished game.
 
-            if action is None:
-                continue
-
-            action.perform()"""
+    def ev_quit(self, event: tcod.event.Quit) -> None:
+        self.on_quit()
 
     def ev_keydown(self, event: tcod.event.KeyDown) -> Optional[Action]:
         if event.sym == tcod.event.K_ESCAPE:
-            raise SystemExit()
+            self.on_quit()
 
 CURSOR_Y_KEYS = {
     tcod.event.K_UP: -1,
