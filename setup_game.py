@@ -1,7 +1,9 @@
-"""Handle the loading an initialization of game sessions."""
 from __future__ import annotations
 
 import copy
+import lzma
+import pickle
+import traceback
 from typing import Optional
 
 import tcod
@@ -48,6 +50,14 @@ def new_game() -> Engine:
     engine.message_log.add_message(
         "Hello and welcome, adventurer, to yet another dungeon!", color.welcome_text
     )
+    return engine
+
+
+def load_game(filename: str) -> Engine:
+    """Load an Engine instance from a file."""
+    with open(filename, "rb") as f:
+        engine = pickle.loads(lzma.decompress(f.read()))
+    assert isinstance(engine, Engine)
     return engine
 
 
