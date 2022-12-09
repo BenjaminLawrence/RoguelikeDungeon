@@ -392,6 +392,7 @@ class MainGameEventHandler(EventHandler):
         action: Optional[Action] = None
         
         key = event.sym
+        modifier = event.mod
 
         player = self.engine.player
 
@@ -406,6 +407,10 @@ class MainGameEventHandler(EventHandler):
         
         elif key == tcod.event.K_g:
             action = PickupAction(player)
+        elif key == tcod.event.K_PERIOD and modifier & (
+            tcod.event.KMOD_LSHIFT | tcod.event.KMOD_RSHIFT
+        ):
+            return actions.TakeStairsAction(player)
 
         elif key == tcod.event.K_i:
             return InventoryActivateHandler(self.engine)
