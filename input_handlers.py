@@ -533,6 +533,8 @@ class MainGameEventHandler(EventHandler):
 
         elif key == tcod.event.K_v:
             return HistoryViewer(self.engine)
+        elif key == tcod.event.K_c:
+            return CharacterScreenEventHandler(self.engine)
         
         elif key == tcod.event.K_g:
             action = PickupAction(player)
