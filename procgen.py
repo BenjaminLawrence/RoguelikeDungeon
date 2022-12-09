@@ -69,10 +69,14 @@ class RectangularRoom:
 
 
 def place_entities(
-    room: RectangularRoom, dungeon: GameMap, maximum_monsters: int, maximum_items: int
+    room: RectangularRoom, dungeon: GameMap, floor_number: int
 ) -> None:
-    number_of_monsters = random.randint(0, maximum_monsters)
-    number_of_items = random.randint(0, maximum_items)
+    number_of_monsters = random.randint(
+        0, get_max_value_for_floor(max_monsters_by_floor, floor_number)
+    )
+    number_of_items = random.randint(
+        0, get_max_value_for_floor(max_items_by_floor, floor_number)
+    )
 
     for i in range(number_of_monsters):
         x = random.randint(room.x1 + 1, room.x2 - 1)
