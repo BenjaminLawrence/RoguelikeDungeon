@@ -14,7 +14,7 @@ player = Actor(
     name="Player",
     ai_cls=HostileEnemy,
     equipment=Equipment(),
-    fighter=Fighter(hp=30, defence=2, power=5),
+    fighter=Fighter(hp=30, base_defence=2, base_power=5),
     inventory=Inventory(capacity=26),
     level=Level(level_up_base=200),
 )
@@ -26,7 +26,7 @@ orc = Actor(
     name="Orc",
     ai_cls=HostileEnemy,
     equipment=Equipment(),
-    fighter=Fighter(hp=10, defence=0, power=3),
+    fighter=Fighter(hp=10, base_defence=0, base_power=3),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=35),
 )
@@ -36,7 +36,7 @@ troll = Actor(
     name="Troll",
     ai_cls=HostileEnemy,
     equipment=Equipment(),
-    fighter=Fighter(hp=16, defence=1, power=4),
+    fighter=Fighter(hp=16, base_defence=1, base_power=4),
     inventory=Inventory(capacity=0),
     level=Level(xp_given=100),
 )
