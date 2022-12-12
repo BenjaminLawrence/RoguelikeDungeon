@@ -363,7 +363,7 @@ class InventoryEventHandler(AskUserEventHandler):
                 item_string = f"({item_key}) {item.name}"
 
                 if is_equipped:
-                    item_string = f"({item_string} (E)"
+                    item_string = f"{item_string} (E)"
                 
                 console.print(x + 1, y + i + 1, item_string)
         else:
